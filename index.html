@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vamos sair?</title>
+<!--Google Fonts link-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<!--icon-->
+<link rel="icon" href="./images/cat.png">
+<!--link to stylesheet-->
+<link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+
+<div class="stage">
+  <div class="card">
+    <div class="card-inner">
+
+      <!-- ===================== SCREEN 1: HOME ===================== -->
+      <section class="screen active" id="screen-home">
+        <h1>Vamos sair?</h1>
+
+        <div class="illustration-wrap">
+          <svg class="illustration-decor" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="100" cy="140" rx="70" ry="10" fill="#FFE3ED"/>
+            <path d="M40 30L44 40L54 44L44 48L40 58L36 48L26 44L36 40Z" fill="#FFD166"/>
+            <path d="M165 100L168 108L176 111L168 114L165 122L162 114L154 111L162 108Z" fill="#FFD166"/>
+          </svg>
+          <img class="illustration-photo" src="./images/amigas-unidas.jpg" alt="amigas-unidas">
+        </div>
+
+        <p class="hint">let's stand xuntas in these dark times ✨🌸</p>
+
+        <div class="choice-row">
+          <button class="btn btn-primary" id="btn-sim" type="button">Sim</button>
+          <button class="btn btn-secondary" id="btn-nao" type="button">Não</button>
+        </div>
+      </section>
+
+      <form action="https://formspree.io/f/xgavnqyv" method="POST">
+
+        <!-- ===================== SCREEN 2: SIM (choose time) ===================== -->
+        <section class="screen" id="screen-sim">
+          <button class="btn-back" data-back type="button">&larr; voltar</button>
+
+          <h2>Que dia você pode?</h2>
+          <input type="date" id="date-sim" name="data_sugerida">
+
+          <label class="field-label" for="place-nao">sugere um lugar? (opcional)</label>
+          <textarea id="place-sim" name="lugar_sugerido" placeholder="aonde seu coração mandar..."></textarea>
+
+          <h2>Que horas fica bom?</h2>
+
+          <div class="chip-grid" id="hour-chips">
+            <button class="chip" data-hour="12:00" type="button">12:00</button>
+            <button class="chip" data-hour="14:00" type="button">14:00</button>
+            <button class="chip" data-hour="16:00" type="button">16:00</button>
+            <button class="chip" data-hour="18:00" type="button">18:00</button>
+            <button class="chip" data-hour="20:00" type="button">20:00</button>
+          </div>
+          <!-- hidden input to collect the select date above -->
+          <input type="hidden" id="hour-input" name="horario" value="">
+
+          <button class="btn btn-submit" id="submit-sim" type="submit" disabled>Enviar</button>
+          <div class="status-msg" id="status-sim"></div>
+        </section>
+
+        <!-- ===================== SCREEN 3: NÃO (choose date) ===================== -->
+        <section class="screen" id="screen-nao">
+          <button class="btn-back" data-back type="button">&larr; voltar</button>
+          <h2>Tudo bem! Que dia fica melhor?</h2>
+
+          <input type="date" id="date-nao" name="data_alternativa">
+
+          <label class="field-label" for="place-nao">sugere um lugar? (opcional)</label>
+          <textarea id="place-nao" name="lugar_alternativo" placeholder="aonde seu coração mandar..."></textarea>
+
+          <button type="submit" class="btn btn-submit" id="submit-nao" disabled name="btn-enviar">Enviar</button>
+          <div class="status-msg" id="status-nao"></div>
+        </section>
+
+        <!-- ===================== SCREEN 4: SUCCESS ===================== -->
+        <section class="screen" id="screen-success">
+          <img src="./images/justin-heart.jpg" alt="justin" class="justin-photo">
+          <h2>Enviado!</h2>
+         <p class="hint">obrigada por responder 💌</p>
+
+        </section>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+<script src="./javascript/script.js"></script>
+
+</body>
+</html>
