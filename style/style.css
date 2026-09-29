@@ -23,7 +23,7 @@
     align-items:center;
     justify-content:center;
     padding:32px 16px;
-    background-image: url(../images/faded-pink-heart-background.jpg);
+    background-image: url('/Convite-Amigas/images/faded-pink-heart-background.jpg');
     background-size: cover;
     font-family:'Nunito', sans-serif;
     color:var(--plum);
